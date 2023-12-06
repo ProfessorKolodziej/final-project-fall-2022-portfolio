@@ -2,12 +2,339 @@
 @import url('https://fonts.googleapis.com/css2?family=Jomhuria&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap');
 
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+.navbar {
+	background: #0B70FE;
+	height: 65px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	box-shadow: 0 20px 50px 0 rgb(0 0 0 / 5%);
+}
+
+.sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 999;
+}
+
+.navbar .logo {
+	text-decoration: none;
+	color: #FF5A00;
+	font-weight: 400;
+	font-family: 'Jomhuria', san-serif;
+	text-transform: uppercase;
+	font-size: 58px;
+	padding-left: 20px;
+}
+
+.menu-btn {
+	position: relative;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	width: 1.5rem;
+	height: 1.5rem;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.navbar .menu-btn__lines::before,
+.navbar .menu-btn__lines::after {
+	content: "";
+	position: absolute;
+}
+
+.navbar .menu-btn__lines,
+.navbar .menu-btn__lines::before,
+.navbar .menu-btn__lines::after {
+	width: 1.5rem;
+	height: 0.1rem;
+	background: #FFFFFF;
+	transition: all 0.4s ease-in-out;
+}
+
+.navbar .menu-btn__lines::before {
+	transform: translateY(-0.5rem);
+}
+
+.navbar .menu-btn__lines::after {
+	transform: translateY(0.5rem);
+}
+
+.navbar .menu-items {
+	display: flex;
+	align-items: center;
+}
+
+.navbar ul li {
+	list-style: none;
+	transition: 0.3s ease;
+}
+
+.navbar ul li .arrow {
+	transition: all .3s ease-out;
+
+}
+
+.navbar ul li a {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.navbar .dropdown {
+	position: relative;
+}
+
+.expand-btn:after {
+	content: ' \25BE';
+	margin-left: 5px;
+}
+
+
+.navbar .dropdown-menu,
+.menu-right {
+	position: absolute;
+	background: #0B70FE;
+	width: 190px;
+	border-radius: 0 0 12px 12px;
+	top: 65px;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.4s ease;
+}
+
+.navbar .menu-item {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding: 0.5rem 1.5rem;
+	font-size: 14px;
+	font-family: "roboto", san-serif;
+}
+
+.navbar .menu-item:hover {
+	background-color: #7DDCFF;
+	border-radius: 12px;
+	color: #FF5A00;
+}
+
+.menu-item.first-item {
+	padding: 1.5rem 1rem;
+}
+
+.navbar .dropdown:hover .dropdown-menu {
+	opacity: 1;
+	visibility: visible;
+}
+
+.navbar .dropdown-right:hover .menu-right {
+	left: 100%;
+	opacity: 1;
+	visibility: visible;
+}
+
+.menu-btn.open .menu-btn__lines {
+	transform: translateX(1rem);
+	background: transparent;
+}
+
+.menu-btn.open .menu-btn__lines::before {
+	transform: rotate(45deg) translate(-0.5rem, 0.5rem);
+	background: #FFFFFF;
+}
+
+.menu-btn.open .menu-btn__lines::after {
+	transform: rotate(-45deg) translate(-0.5rem, -0.5rem);
+	background: #FFFFFF;
+}
+
+
+@media screen and (max-width: 768px) {
+	.navbar {
+		padding: 10px 20px;
+	}
+
+	.overflow {
+		overflow: hidden;
+	}
+
+	.overlay {
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 500;
+		background-color: rgba(0, 0, 0, 0.6);
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+	}
+
+	.overlay--active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.menu-btn {
+		display: flex;
+	}
+
+	.navbar .menu-items {
+		position: fixed;
+		height: 100%;
+		max-height: initial;
+		overflow-y: auto;
+		width: 80%;
+		top: 65px;
+		left: 0;
+		background: #25193e;
+		display: block;
+		transform: translateX(-100vh);
+		transition: 0.3s ease-out;
+		padding-bottom: 100px;
+	}
+
+	.menu-items.open {
+		transform: translateY(0);
+		background-color: #2340DB;
+	}
+
+	.menu-items li:first-child {
+		margin-top: 20px;
+	}
+
+	.menu-items li a {
+		padding: 10px 1rem;
+		display: block;
+		font-size: 18px;
+	}
+
+	.menu-items .dropdown-right .right-arrow {
+		transform: rotate(90deg);
+	}
+
+	.menu-item.first-item {
+		padding: 1rem 1rem;
+	}
+
+	.menu-items .dropdown-menu,
+	.menu-items .menu-right {
+		position: static;
+		opacity: 1;
+		top: 4rem;
+		visibility: visible;
+		margin-left: -18px;
+		width: auto;
+		max-height: 0;
+		transform: scaleX(0);
+		transform-origin: left;
+		overflow: hidden;
+		transition: all 0.5s ease;
+	}
+
+
+	.menu-items .dropdown-menu,
+	.menu-items .menu-right {
+		padding-left: 20px;
+		width: 102%;
+	}
+
+
+	.expand-btn.open+.sample {
+		max-height: 100%;
+		transform: scaleZ(1);
+	}
+
+}
+
 body {
 	margin: 0;
 	padding: 0;
 }
 
 
+
+.footer {
+	background-color: #0B70FE;
+	padding: 10px 0;
+	display: flex;
+	bottom: 0;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.footer-connect {
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	margin-left: 5%;
+	text-decoration: none;
+	margin-top: 15px;
+}
+
+.footer-branding {
+	font-family: 'Jomhuria', sans-serif;
+	font-size: 36px;
+	font-weight: 400;
+	color: #FF5A00;
+	margin-right: 5%;
+	margin-top: 10px;
+	text-decoration: none;
+}
+
+.banner {
+	background-color: #0B70FE;
+	color: white;
+	padding: 50px 20px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap');
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.nav {
+	background-color: #0B70FE;
+	color: white;
+	padding: 20px 10px;
+	text-align: center;
+	font-size: 16px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	display: flex;
+	justify-content: space-between;
+}
+
+.nav a {
+	color: white;
+	text-decoration: none;
+	padding: 0 10px;
+}
+
+.nav .homepage {
+	font-family: 'Jomhuria', sans-serif;
+	font-size: 36px;
+	font-weight: 400;
+	color: #FF5A00;
+}
+
+.nav-tab {
+	padding-top: 5px;
+}
 
 .footer {
 	background-color: #0B70FE;
@@ -97,7 +424,23 @@ body {
 }
 
 @media (min-width: 768px) {
+	.nav {
+		font-size: 18px;
+		display: flex;
+	}
 
+	.nav .homepage {
+		font-size: 58px;
+	}
+
+	.nav-tab {
+		display: flex;
+		padding-top: 15px;
+	}
+
+	.nav-tab a {
+		font-size: 18px;
+	}
 
 	.footer {
 		padding: 20px 0;
