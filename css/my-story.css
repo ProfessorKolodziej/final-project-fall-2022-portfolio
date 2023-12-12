@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jomhuria&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=AR+One+Sans&display=swap');
 
 .banner {
 	background-color: #0B70FE;
@@ -9,7 +10,7 @@
 }
 
 .banner .intro {
-	font-family: 'Inter', sans-serif;
+	font-family: 'AR One Sans', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
 	text-align: left;

@@ -39,8 +39,20 @@
 	align-items: center;
 }
 
+.logo-first {
+	color: #FF9F00;
+}
+
+.logo-last {
+	color: #FFCF00;
+}
+
 .navbar .logo:hover {
 	background-color: #7DDCFF;
+}
+
+.navbar .logo:hover .logo-first,
+.navbar .logo:hover .logo-last {
 	color: #FF5A00;
 }
 
@@ -303,11 +315,17 @@
 	padding-right: 15px;
 	padding-top: 17px;
 	padding-bottom: 17px;
+	text-transform: uppercase;
 }
 
 .footer-connect:hover,
 .footer-branding:hover {
 	background-color: #7DDCFF;
+	color: #FF5A00;
+}
+
+.footer-branding:hover .logo-first,
+.footer-branding:hover .logo-last {
 	color: #FF5A00;
 }
 
