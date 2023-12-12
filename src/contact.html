@@ -43,16 +43,22 @@
 	</div>
 
 	<div class="content">
-		<div class="name">
-			<input type="text" placeholder="First Name*" required>
-			<input type="text" placeholder="Last Name*" required>
-		</div>
-		<div class="number">
-			<input type="email" placeholder="Email Address*" required>
-			<input type="tel" placeholder="Phone Number">
-		</div>
-		<textarea placeholder="Comments / Questions"></textarea>
-		<button type="submit">Submit</button>
+		<form action="https://formspree.io/f/xleyqvnj" method="POST">
+			<div class="name">
+				<input type="text" name="firstName" placeholder="First Name*" required>
+				<input type="text" name="lastName" placeholder="Last Name*" required>
+			</div>
+			<div class="number">
+				<input type="email" name="_replyto" placeholder="Email Address*" required>
+				<input type="tel" name="phoneNumber" placeholder="Phone Number">
+			</div>
+			<textarea name="comments" placeholder="Comments / Questions"></textarea>
+			<div class="button_row">
+				<button type="submit" class="btn">
+					<span>Submit</span>
+				</button>
+			</div>
+		</form>
 	</div>
 
 	<div class="contact-details">

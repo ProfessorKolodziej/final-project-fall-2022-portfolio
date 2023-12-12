@@ -69,21 +69,50 @@ body {
 	font-family: 'Inter', sans-serif;
 }
 
-button {
-	width: 30%;
-	padding: 16px;
-	background-color: #FF9F00;
-	color: white;
-	font-size: 16px;
-	font-weight: semi-bold;
-	border-radius: 6px;
+.btn {
+	border: none;
+	border-radius: 12px;
+	display: block;
+	text-align: center;
 	cursor: pointer;
-	border: 0px;
-	margin-top: 20px;
+	outline: none;
+	overflow: hidden;
+	position: relative;
+	color: #fff;
+	font-weight: 700;
+	font-family: 'Inter', sans-serif;
+	font-size: 15px;
+	background-color: #0B70FE;
+	padding: 11px 25px;
+	margin: 20px auto;
 }
 
-button:hover {
-	background-color: #FF5A00;
+a {
+	text-decoration: none;
+}
+
+.btn span {
+	position: relative;
+	z-index: 1;
+}
+
+.btn:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 300%;
+	width: 140%;
+	background: #FF5A00;
+	-webkit-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+	-webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+	transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+
+.btn:hover:after {
+	-webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+	transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
 
 .content textarea {
@@ -241,7 +270,7 @@ button:hover {
 	}
 
 	.content textarea {
-		width: 100%;
+		width: calc(100% - 30px);
 	}
 
 	.contact-details {
@@ -270,9 +299,13 @@ button:hover {
 		margin-left: 40px;
 		margin-right: 50px;
 	}
+
+	.btn {
+		font-size: 16px;
+	}
 }
 
-@media (min-width: 1495px) {
+@media (min-width: 1024px) {
 	.title h2 {
 		margin-top: 80px;
 	}
@@ -311,10 +344,7 @@ button:hover {
 		max-width: 80%;
 	}
 
-	.content input,
-	.content textarea {
-		width: 100%;
-	}
+
 
 	.name,
 	.number {
@@ -329,9 +359,7 @@ button:hover {
 		width: calc(50% - 25px);
 	}
 
-	.content textarea {
-		width: 100%;
-	}
+
 
 	.contact-details {
 		padding-top: 100px;
@@ -372,21 +400,8 @@ button:hover {
 		font-size: 32px;
 	}
 
-	.icon-phone,
-	.icon-email,
-	.icon-linkedin,
-	.icon-instagram,
-	.icon-wechat {
-		width: 50px;
-		height: 50px;
-	}
-
 	.contact-item {
-		margin-left: 150px;
-		margin-right: 150px;
-	}
-
-	button {
-		width: 20%;
+		margin-left: 80px;
+		margin-right: 80px;
 	}
 }
