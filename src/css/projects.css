@@ -28,7 +28,7 @@ body {
 	font-weight: 400;
 	color: black;
 	text-align: left;
-	letter-spacing: 2%;
+	padding-bottom: 50px;
 	line-height: 1.5;
 }
 
@@ -70,11 +70,11 @@ body {
 }
 
 .image {
-	width: 80px;
-	height: 80px;
+	width: 120px;
+	height: 70%;
 	object-fit: cover;
 	border-radius: 6px;
-	padding-left: 25px;
+	padding-right: 20px;
 }
 
 hr {
@@ -92,7 +92,7 @@ a {
 		margin-left: 100px;
 		margin-right: 100px;
 		font-size: 16px;
-		padding-bottom: 30px;
+		padding-bottom: 50px;
 	}
 
 	.title {
@@ -154,11 +154,12 @@ a {
 
 }
 
-@media (min-width: 1495px) {
+@media (min-width: 1024px) {
 	.intro {
 		margin-left: 100px;
 		margin-right: 100px;
 		font-size: 21px;
+		padding-bottom: 100px;
 	}
 
 	.title {
@@ -187,6 +188,6 @@ a {
 	}
 
 	.project-section {
-		height: 240px;
+		height: 270px;
 	}
 }
