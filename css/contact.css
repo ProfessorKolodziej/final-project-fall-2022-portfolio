@@ -87,6 +87,28 @@ body {
 	margin: 20px auto;
 }
 
+.icon-instagram,
+.icon-wechat,
+.icon-linkedin {
+	transition: transform 0.3s ease, opacity 0.3s ease;
+	display: block;
+}
+
+.icon-linkedin:hover {
+	transform: scale(1.1);
+	opacity: 0.8;
+}
+
+.icon-instagram:hover {
+	transform: scale(1.1);
+	opacity: 0.8;
+}
+
+.icon-wechat:hover {
+	transform: scale(1.1);
+	opacity: 0.8;
+}
+
 a {
 	text-decoration: none;
 }
@@ -131,6 +153,7 @@ a {
 	color: #495057;
 	font-weight: 900;
 	margin-bottom: 10px;
+	margin-top: 50px;
 }
 
 .contact-details {
@@ -139,6 +162,7 @@ a {
 
 .contact-details h2 {
 	margin-bottom: 20px;
+	margin-top: 50px;
 	font-family: Inter, sans-serif;
 	font-size: 20px;
 	color: #495057;
@@ -229,6 +253,10 @@ a {
 	box-shadow: 0 0 0 2px rgba(255, 90, 0, 0.5);
 }
 
+.content form {
+	text-align: center;
+}
+
 @media (min-width: 768px) {
 
 	.title {
@@ -269,9 +297,7 @@ a {
 		width: calc(50% - 25px);
 	}
 
-	.content textarea {
-		width: calc(100% - 30px);
-	}
+
 
 	.contact-details {
 		padding-top: 70px;
